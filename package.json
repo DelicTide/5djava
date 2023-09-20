@@ -1,0 +1,36 @@
+{
+  "name": "5djava",
+  "version": "1.0.0",
+  "description": "Would you be able to print a brief summary for documentation of our build up to this point? ChatGPT Certainly! Here's a summary of the steps we've taken and the challenges we've encountered:",
+  "main": "main.js",
+  "dependencies": {
+    "cannon": "^0.6.2",
+    "esbuild": "^0.18.20",
+    "fsevents": "^2.3.3",
+    "nanoid": "^3.3.6",
+    "picocolors": "^1.0.0",
+    "postcss": "^8.4.29",
+    "rollup": "^3.29.0",
+    "source-map-js": "^1.0.2",
+    "three": "^0.156.1",
+    "vanta": "^0.5.24"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9"
+  },
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DelicTide/5djava.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DelicTide/5djava/issues"
+  },
+  "homepage": "https://github.com/DelicTide/5djava#readme"
+}
