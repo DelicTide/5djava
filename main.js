@@ -39,11 +39,19 @@ let growthRate = 0.001;
       mass: 1, 
       shape: sphereShape
   });
-  
+
+  function onWindowResize() {
+    // Update the camera's aspect ratio
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    console.log("Window resized");
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  }
   function init() {
       scene = new THREE.Scene();
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
       renderer = new THREE.WebGLRenderer();
+      renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
       document.body.appendChild(renderer.domElement);
       camera.position.z = 5;
@@ -51,7 +59,7 @@ let growthRate = 0.001;
       // Initialize threeGeometry and threeMesh here
       const threeMaterial = new THREE.MeshBasicMaterial({color: 0xff0000});
       threeMesh = new THREE.Mesh(threeGeometry, threeMaterial);
-  
+
       scene.add(threeMesh); 
       sphereBody.position.copy(threeMesh.position);
       sphereBody.quaternion.copy(threeMesh.quaternion);
@@ -85,7 +93,9 @@ let growthRate = 0.001;
       
       // THREE.SphereGeometry(1, 32, 32);
       const controls = new OrbitControls(camera, renderer.domElement);
-  
+    
+      window.addEventListener('resize', onWindowResize);
+
       animate();
   }
   
